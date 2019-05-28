@@ -30,7 +30,7 @@ namespace Funda.Service.Controllers
 
         // GET api/makelaar/Top10MakelaarsMetTuin/{location}
         [HttpGet]
-        [Route("Top10MakelaarsMetTuin/{location}")]
+        [Route("Top10Makelaars/{location}/tuin")]
         public async Task<ActionResult<List<Makelaar>>> Top10MakelaarsMetTuin(string location)
         {
             return await _makelaarInfo.GetTopMakelaars(location, true);
