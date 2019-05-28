@@ -22,18 +22,18 @@ namespace Funda.DataAccess
         /// <summary>
         /// the location of the objects
         /// </summary>
-        private string Location { get; set; }
+        private string _location { get; set; }
 
         /// <summary>
         /// boolean representing whether or not the object has a garden
         /// </summary>
-        private bool HasGarden { get; set; }
+        private bool _hasGarden { get; set; }
 
         
         public AanbodRequest(string location, bool hasGarden)
         {
-            Location = location;
-            HasGarden = hasGarden;
+            _location = location;
+            _hasGarden = hasGarden;
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Funda.DataAccess
         {
             var key = "ac1b0b1572524640a0ecc54de453ea9f";
             var aanbodType = "koop";
-            var zoekPad = HasGarden? $"/{Location}/tuin/" : $"/{Location}/";
+            var zoekPad = _hasGarden? $"/{_location}/tuin/" : $"/{_location}/";
             var pageNumber = _pageNumber.ToString();
             return new ZoekAanbodRequest(key, aanbodType, zoekPad, null, pageNumber, PAGE_SIZE, null, 0);
         }
